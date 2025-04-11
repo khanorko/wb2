@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Whiteboard App (wb2)
+
+A real-time collaborative whiteboard application built with Next.js and Socket.IO. This application allows users to create, move, and share sticky notes in a collaborative workspace.
+
+## Features
+
+- Real-time collaboration using Socket.IO
+- Create, move, and delete sticky notes
+- Zoom functionality (50% - 200%)
+- Share board view with others
+- Persistent storage with MongoDB
+- Responsive grid layout
+- Auto-saving changes
+
+## Tech Stack
+
+- Frontend: Next.js 15.3.0, React 19
+- Backend: Node.js, Express, Socket.IO
+- Database: MongoDB
+- Styling: Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/khanorko/wb2.git
+cd wb2
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+# Install frontend dependencies
+npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Install backend dependencies
+cd server
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Set up environment variables:
+- Copy `.env.example` to `.env` in the root directory
+- Copy `server/.env.example` to `server/.env`
+- Update the MongoDB connection string and other variables as needed
+
+4. Run the development servers:
+
+```bash
+# Start the frontend (in the root directory)
+npm run dev
+
+# Start the backend (in the server directory)
+cd server
+npm run dev
+```
+
+Open [http://localhost:3004](http://localhost:3004) with your browser to see the result.
+
+## Development
+
+- Frontend runs on port 3004 by default
+- Backend runs on port 5001 by default
+- WebSocket connection is automatically established
+- MongoDB is used for persistent storage
+- Changes are automatically saved and synchronized between clients
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Socket.IO Documentation](https://socket.io/docs/v4)
+- [MongoDB Documentation](https://docs.mongodb.com)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application can be deployed using platforms like:
+- [Vercel](https://vercel.com) for the frontend
+- [Heroku](https://heroku.com) or similar for the backend
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for the database
